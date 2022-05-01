@@ -22,7 +22,13 @@
                     <a class="nav-link" th:classappend="${activeTab == 'ProductForm' ? 'active' : ''}" th:href="@{/product}">Добавить продукт</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend="${activeTab == 'CartForm' ? 'active' : ''}" th:href="@{/product/cart}">Корзина</a>
+                    <a class="nav-link" th:classappend="${activeTab == 'CartForm' ? 'active' : ''}" th:href="@{/cart}">Корзина</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activeTab == 'OrderList' ? 'active' : ''}" th:href="@{/order/all}">Заказы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activeTab == 'OrderForm' ? 'active' : ''}" th:href="@{/order}">Добавить заказ</a>
                 </li>
             </ul>
         </div>

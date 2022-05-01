@@ -45,7 +45,7 @@
                     <a type="button" th:href="@{/product/delete(id=${product.id})}" class="btn btn-danger">Удалить</a>
                 </td>
                 <td >
-                    <a type="button" th:href="@{/product/addToCart(id=${product.id})}" th:if="${product.status.name() == 'ACTIVE'}" class="btn btn-success">Добавить в корзину</a>
+                    <a type="button" th:href="@{/cart/addToCart(id=${product.id})}" th:if="${product.status.name() == 'ACTIVE'}" class="btn btn-success">Добавить в корзину</a>
                 </td>
             </tr>
             </tbody>
