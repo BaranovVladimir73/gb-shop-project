@@ -59,38 +59,5 @@ public class ProductThymeleafController {
         return "redirect:/product/all";
     }
 
-/*
-    @PostMapping
-    public String saveProduct(Product product) {
-        productService.save(product);
-        return "redirect:/product/all";
-    }
-
-    @GetMapping("/delete")
-    public String deleteById(@RequestParam(name = "id") Long id) {
-        productService.deleteById(id);
-        return "redirect:/product/all";
-    }
-
-    @GetMapping("/cart")
-    public String showCart(Model model){
-        model.addAttribute("products", productService.showAllProductFromCart());
-        return "cart-list";
-    }
-
-    @GetMapping("/addToCart")
-    public String addProductToCart(@RequestParam(name = "id") Long id) {
-        Product product = productService.findById(id);
-        productService.addProductToCart(product);
-        return "redirect:/product/all";
-    }
-
-    @GetMapping("/deleteFromCart")
-    public String deleteProductFromCart(@RequestParam(name = "id") int id) {
-        productService.deleteProductFromCart(id);
-        return "redirect:/product/cart";
-    }
-
- */
 
 }
