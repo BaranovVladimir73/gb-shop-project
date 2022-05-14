@@ -17,14 +17,14 @@ public class OrderService {
     private final OrderGateway orderGateway;
     private final CartService cartService;
 
-    public void save(OrderDto orderDto) {
+    public void save(OrderDto orderDto, String jwt) {
 
         orderDto.setProducts(cartService.getProducts());
         orderDto.setStatus(OrderStatus.CREATED);
         if (orderDto.getId() != null) {
             orderGateway.handleUpdate(orderDto.getId(), orderDto);
         } else {
-            orderGateway.handlePost(orderDto);
+            orderGateway.handlePost(orderDto, "Bearer " + jwt);
         }
     }
 
@@ -32,8 +32,9 @@ public class OrderService {
         return orderGateway.getOrder(id).getBody();
     }
 
-    public List<OrderDto> findAll() {
-        return orderGateway.getOrderList();
+    public List<OrderDto> findAll(String jwt) {
+        log.error("Bearer " + jwt);
+        return orderGateway.getOrderList("Bearer " + jwt);
     }
 
     public void deleteById(Long id) {

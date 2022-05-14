@@ -10,6 +10,7 @@ import ru.gb.gbapi.security.UserDto;
 import ru.gb.gbapi.security.api.AuthenticationUserGateway;
 import ru.gb.gbapi.security.api.UserGateway;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -17,7 +18,6 @@ import java.util.List;
 public class UserService {
 
     private final UserGateway userGateway;
-    private final AuthenticationUserGateway authenticationUserGateway;
 
     public void save(UserDto userDto) {
         if (userDto.getId() != null) {
@@ -39,7 +39,5 @@ public class UserService {
         userGateway.deleteById(id);
     }
 
-    public void login(AuthenticationUserDto authenticationUserDto){
-        authenticationUserGateway.login(authenticationUserDto);
-    }
+
 }

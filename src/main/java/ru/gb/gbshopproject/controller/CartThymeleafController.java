@@ -16,7 +16,6 @@ import ru.gb.gbshopproject.service.ProductService;
 public class CartThymeleafController {
 
     private final CartService cartService;
-    private final ProductService productService;
 
     @GetMapping
     public String showCart(Model model){

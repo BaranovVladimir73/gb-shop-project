@@ -14,24 +14,11 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ShopConfig {
 
+
     @Bean
     public AuditorAware<String> auditorAwareBean() {
         return () -> Optional.of("User");
     }
 
-    /*
-    @Bean
-    public AuditorAware<String> auditorAwareBean() {
-        return () -> Optional.ofNullable(SecurityContextHolder.getContext())
-                .map(SecurityContext::getAuthentication)
-                .filter(Authentication::isAuthenticated)
-                .map(Authentication::getName);
-    }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-     */
 }
